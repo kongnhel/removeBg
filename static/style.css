@@ -1,0 +1,228 @@
+/* ------------------------------------------- */
+/* General Reset and Typography */
+/* ------------------------------------------- */
+:root {
+  --primary-color: #007bff; /* ពណ៌ខៀវសំខាន់ */
+  --secondary-color: #6c757d; /* ពណ៌ប្រផេះបន្ទាប់បន្សំ */
+  --text-color: #343a40; /* ពណ៌អត្ថបទខ្មៅងងឹត */
+  --background-light: #f8f9fa; /* ផ្ទៃខាងក្រោយស្រាល */
+  --card-background: #ffffff; /* ផ្ទៃខាងក្រោយប្រអប់ស */
+  --border-radius: 8px; /* កាំមូល */
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* ស្រមោលស្រាល */
+}
+
+* {
+  font-family: "Khmer OS Battambang", "Roboto", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ------------------------------------------- */
+/* Container & Headings */
+/* ------------------------------------------- */
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* ------------------------------------------- */
+/* Upload Form & Box */
+/* ------------------------------------------- */
+.upload-box {
+  padding: 30px;
+  border: 2px dashed #ced4da; /* បន្ទាត់ដាច់ៗ */
+  border-radius: var(--border-radius);
+  background-color: #ffffff;
+}
+
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* លាក់ input file ដើម */
+.hidden-input {
+  display: none;
+}
+
+/* Custom File Upload Button */
+.custom-file-upload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.upload-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* ពណ៌ខៀវងងឹតបន្តិច */
+  box-shadow: 0 6px 10px rgba(0, 123, 255, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(1px); /* ចុចបន្តិច */
+}
+
+/* ------------------------------------------- */
+/* Image Preview Area Styles */
+/* ------------------------------------------- */
+
+.image-preview-area {
+  display: flex; /* ដាក់​រូបភាព​មុន​និង​ក្រោយ​ឱ្យ​នៅ​ក្បែរ​គ្នា */
+  justify-content: center;
+  gap: 30px; /* គម្លាត​រវាង​រូបភាព​ទាំងពីរ */
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.preview-box {
+  width: 45%;
+  max-width: 300px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.preview-box p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.placeholder {
+  color: #888;
+  padding: 50px 0;
+  font-style: italic;
+  min-height: 150px; /* ជួយ​រក្សា​កម្ពស់​ថេរ */
+  display: block;
+}
+
+.preview-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px dashed #ccc;
+  background-color: #ffffff; /* ដាក់​ផ្ទៃ​ពណ៌​ស​ដើម្បី​បង្ហាញ​ថា​កន្លែង​នេះ​ជា​ផ្ទៃ​ថ្លា (transparent) */
+  /* display: none; */ /* ត្រូវ​បាន​កំណត់​ដោយ HTML inline style */
+}
+
+/* ------------------------------------------- */
+/* Download Button Style (ថ្មី) */
+/* ------------------------------------------- */
+.download-button {
+  display: inline-block; /* ធ្វើ​ឱ្យ​វា​មាន​ឥរិយាបថ​ដូច​ប៊ូតុង */
+  margin-top: 20px; /* គម្លាត​ពី​ប៊ូតុង​ដក​ផ្ទៃ​ខាងក្រោយ */
+  padding: 12px 25px;
+  background-color: #28a745; /* ពណ៌​បៃតង​សម្រាប់​ទាញ​យក */
+  color: white;
+  text-decoration: none; /* លុប​បន្ទាត់​ក្រោម */
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.download-button:hover {
+  background-color: #1e7e34; /* ពណ៌​បៃតង​ងងឹត​បន្តិច */
+  box-shadow: 0 6px 10px rgba(40, 167, 69, 0.4);
+}
+
+.download-button:active {
+  transform: translateY(1px);
+}
+
+/* ------------------------------------------- */
+/* Responsive Design */
+/* ------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .upload-box {
+    padding: 20px;
+  }
+  /* ពេល​អេក្រង់​តូច ដាក់​រូបភាព​ឱ្យ​ត្រួត​លើ​គ្នា */
+  .image-preview-area {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .preview-box {
+    width: 100%;
+    max-width: none;
+  }
+}
